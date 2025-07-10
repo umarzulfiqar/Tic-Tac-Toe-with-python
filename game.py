@@ -49,27 +49,29 @@ def evaluation(board,player):
 
 
 
-
+def main():
     
-board = [[" " for row in range(3)] for column in range(3)]
-currentplayer = "X"
-move=0
+    board = [[" " for row in range(3)] for column in range(3)]
+    currentplayer = "X"
+    move=0
 
-while move < 9:
-    print_board(board)
-    row,col= get_player_move(currentplayer,board)
-    board[row][col]= currentplayer
-    move+=1
-
-    if evaluation(board,currentplayer):
+    while move < 9:
         print_board(board)
-        print(f"Player {currentplayer} wins the game.")
+        row,col= get_player_move(currentplayer,board)
+        board[row][col]= currentplayer
+        move+=1
+
+        if evaluation(board,currentplayer):
+            print_board(board)
+            print(f"Player {currentplayer} wins the game.")
+            return
     
-    
-    currentplayer = "O" if currentplayer == "X" else "X"
+        currentplayer = "O" if currentplayer == "X" else "X"
 
 
     print_board(board)
     print("Game Draw.")
 
 
+if __name__ == "__main__":
+    main()
