@@ -30,3 +30,7 @@ The Evaluation function check or everytime user/player enter the location of its
 In this step i make evaluation function in which each row,column and diagonal entities checked with the help of condition and return the player who won or 
 match draw. I take arrguments 'board and current player' and check or each row of board, column of board and diagonal entites of board. If nothing happen
 true in this conditions than this function will return 'False' or Evaluation()
+
+
+Explaination of 4th setep:
+I define main function in which i call all my functions along with loop and return statment.
