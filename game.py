@@ -24,13 +24,52 @@ def get_player_move(player, board):
             print("Invalid input:", e)
 
 
+def evaluation(board,player):
+    #check for row
+    for row in board:
+        if all(cell==player for cell in row):
+            return True
+            
 
-#Board for testing
+    #check for column
+    for col in range(3):
+        if all(board[row][col]==player for row in range(3)):
+            return True
+            
+
+    #check for diagonals
+    if all(board[i][i] == player for i in range(3)):
+            return True
+    if all(board[i][2 - i] == player for i in range(3)):
+        return True
+        
+    else:
+        return False
+
+
+
+
+
+    
 board = [[" " for row in range(3)] for column in range(3)]
-print_board(board)
+currentplayer = "X"
+move=0
 
-#Test move 
-player = "X"
-row, col = get_player_move(player, board)             #get 2 diamenstion value from function
-board[row][col] = player                              #change index[i][i] with player Name
-print_board(board)
+while move < 9:
+    print_board(board)
+    row,col= get_player_move(currentplayer,board)
+    board[row][col]= currentplayer
+    move+=1
+
+    if evaluation(board,currentplayer):
+        print_board(board)
+        print(f"Player {currentplayer} wins the game.")
+    
+    
+    currentplayer = "O" if currentplayer == "X" else "X"
+
+
+    print_board(board)
+    print("Game Draw.")
+
+
