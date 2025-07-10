@@ -26,7 +26,7 @@ def get_player_move(player, board):
 
 
 #Board for testing
-board = [[" " for _ in range(3)] for _ in range(3)]
+board = [[" " for row in range(3)] for column in range(3)]
 print_board(board)
 
 #Test move 
