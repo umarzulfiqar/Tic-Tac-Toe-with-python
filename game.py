@@ -64,13 +64,23 @@ def main():
         if evaluation(board,currentplayer):
             print_board(board)
             print(f"Player {currentplayer} wins the game.")
-            return
+            again=input("Do you want to play again? (yes->'y' | no->'n')")
+            if again=='y':
+                main()
+            else:
+                return
     
         currentplayer = "O" if currentplayer == "X" else "X"
 
 
     print_board(board)
     print("Game Draw.")
+
+    again=input("Do you want to play again? (yes->'y' | no->'n')")
+    if again=='y':
+        main()
+    else:
+        return
 
 
 if __name__ == "__main__":
