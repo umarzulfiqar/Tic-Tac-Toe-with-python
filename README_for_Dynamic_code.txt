@@ -8,3 +8,10 @@ Check for conditions and allow or deny user to add currentplayer value at specif
 In evaluation() this function will also get 'g_size' along with player and board (2 diamenstion) and check for row,column and diagonal entities
 and return the value for row,column and diagonal
 
+I have change make little changes and make my game in a class and seprate bussiness logic according to me.
+create class tictactoe and initilize it with constructor along with values self,g_size
+
+I add 3 new functions in class which was prviously in the main function.
+1-> player_turn() this function takes values of row and column from get_player_move function and update the table and increment in move.
+2-> switch_player which is simpply work on if else statment
+3-> is_draw() this function check if move value is equal to max move if yes this will call.
