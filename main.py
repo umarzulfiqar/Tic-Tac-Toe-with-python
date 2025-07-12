@@ -1,9 +1,9 @@
-from tictactoe_logics import tictactoe
+from tictactoe_logics import tic_tac_toe
 from ui import print_board, get_player_move, ask_replay,check_board_initial_value
 
 def main():
     g_size = check_board_initial_value()
-    game = tictactoe(g_size)
+    game = tic_tac_toe(g_size)
 
     while True:
         print_board(game.get_board(), g_size)

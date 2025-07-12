@@ -1,4 +1,4 @@
-class tictactoe:
+class tic_tac_toe:
     def __init__(self,g_size):
         self.g_size = g_size
         self.board = [[" " for _ in range(g_size)] for _ in range(g_size)]
