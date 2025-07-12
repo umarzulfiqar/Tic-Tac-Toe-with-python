@@ -22,3 +22,13 @@ def get_player_move(currentplayer, g_size):
 def ask_replay():
     again = input("Do you want to play again? (yes->'y' | no->'n'): ")
     return again.lower() == 'y'
+
+def check_board_initial_value():
+    while True:
+        try:
+            val=int(input("Value for board: "))
+            if val<=0 or val==1:
+                raise ValueError("Enter value grater than 0 and 1.")
+            return val
+        except ValueError as e:
+            print("Invalid value",e)
